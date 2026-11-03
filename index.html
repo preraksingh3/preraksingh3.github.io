@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of an aspiring QA Engineer focused on manual testing, automation, and software quality.">
+  <title>Prerak Singh | QA Engineer Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2e;
+      --panel-soft: #17223a;
+      --text: #eef2ff;
+      --muted: #a7b2cc;
+      --accent: #7c9cff;
+      --accent-2: #66e0c2;
+      --line: rgba(255,255,255,.11);
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: radial-gradient(circle at 85% 5%, #1c2c53 0, transparent 30%), var(--bg);
+      color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(11,16,32,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .logo { font-weight: 800; letter-spacing: -.04em; font-size: 1.2rem; }
+    .logo span { color: var(--accent-2); }
+    .navlinks { display: flex; gap: 24px; color: var(--muted); font-size: .92rem; }
+    .navlinks a:hover { color: var(--text); }
+    .menu { display: none; background: none; border: 1px solid var(--line); color: var(--text); padding: 8px 12px; border-radius: 10px; }
+    .hero { padding: 105px 0 90px; display: grid; grid-template-columns: 1.35fr .65fr; gap: 55px; align-items: center; }
+    .eyebrow { color: var(--accent-2); font-weight: 700; letter-spacing: .13em; text-transform: uppercase; font-size: .78rem; }
+    h1 { font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.04; letter-spacing: -.06em; margin: 18px 0; }
+    h1 span { color: var(--accent); }
+    .lead { color: var(--muted); max-width: 650px; font-size: 1.12rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 12px; font-weight: 700; border: 1px solid var(--line); transition: .2s; }
+    .btn.primary { background: var(--accent); color: #091126; border-color: var(--accent); }
+    .btn:hover { transform: translateY(-2px); }
+    .hero-card { background: linear-gradient(145deg, rgba(124,156,255,.18), rgba(102,224,194,.08)); border: 1px solid var(--line); padding: 28px; border-radius: 24px; box-shadow: 0 24px 80px rgba(0,0,0,.22); }
+    .avatar { width: 78px; height: 78px; display: grid; place-items: center; border-radius: 22px; background: var(--accent); color: #0b1020; font-size: 1.7rem; font-weight: 900; margin-bottom: 24px; }
+    .hero-card h2 { margin: 0 0 5px; font-size: 1.25rem; }
+    .hero-card p { margin: 0; color: var(--muted); }
+    .status { display: inline-flex; gap: 8px; align-items: center; margin-top: 22px; color: var(--accent-2); font-size: .9rem; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 14px var(--accent-2); }
+    section { padding: 72px 0; border-top: 1px solid var(--line); }
+    .section-head { margin-bottom: 30px; }
+    .section-head h2 { margin: 5px 0; font-size: clamp(1.9rem, 4vw, 2.6rem); letter-spacing: -.04em; }
+    .section-head p { margin: 0; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 25px; }
+    .panel p { color: var(--muted); margin-top: 0; }
+    .facts { display: grid; gap: 14px; }
+    .fact { display: flex; justify-content: space-between; gap: 15px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+    .fact:last-child { border: 0; padding: 0; }
+    .fact span:first-child { color: var(--muted); }
+    .skills { display: flex; flex-wrap: wrap; gap: 11px; }
+    .chip { border: 1px solid rgba(124,156,255,.3); color: #dce5ff; background: rgba(124,156,255,.09); border-radius: 999px; padding: 8px 14px; font-size: .92rem; }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 25px; display: flex; flex-direction: column; }
+    .project .tag { color: var(--accent-2); font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; }
+    .project h3 { margin: 9px 0; font-size: 1.25rem; }
+    .project p { color: var(--muted); margin: 0 0 18px; }
+    .project a { color: var(--accent); font-weight: 700; margin-top: auto; }
+    .timeline { border-left: 1px solid rgba(124,156,255,.5); margin-left: 8px; padding-left: 25px; }
+    .timeline-item { position: relative; padding-bottom: 24px; }
+    .timeline-item:before { content: ""; position: absolute; width: 11px; height: 11px; border-radius: 50%; background: var(--accent-2); left: -31px; top: 8px; }
+    .timeline-item h3 { margin: 0; }
+    .timeline-item p { color: var(--muted); margin: 5px 0 0; }
+    .contact { display: flex; justify-content: space-between; gap: 25px; align-items: center; background: linear-gradient(120deg, rgba(124,156,255,.15), rgba(102,224,194,.08)); border: 1px solid var(--line); border-radius: 22px; padding: 30px; }
+    .contact p { color: var(--muted); margin-bottom: 0; }
+    footer { padding: 28px 0; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 760px) {
+      .hero, .about-grid, .cards { grid-template-columns: 1fr; }
+      .hero { padding: 75px 0 60px; gap: 35px; }
+      .navlinks { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 18px 20px; background: #10182b; flex-direction: column; border-bottom: 1px solid var(--line); }
+      .navlinks.open { display: flex; }
+      .menu { display: block; }
+      .contact { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="logo" href="#home">PS<span>.</span></a>
+      <button class="menu" id="menuButton" aria-label="Toggle navigation">Menu</button>
+      <div class="navlinks" id="navLinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#learning">Learning</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Aspiring QA Engineer</div>
+        <h1>Hi, I'm Prerak.<br>I care about <span>quality.</span></h1>
+        <p class="lead">I'm building my career in software testing, with a focus on finding defects, validating user journeys, and helping create reliable applications.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">View my work</a>
+          <a class="btn" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="avatar">PS</div>
+        <h2>Prerak Singh</h2>
+        <p>QA / Software Testing</p>
+        <div class="status"><span class="dot"></span> Learning, testing and improving</div>
+      </aside>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">A little about me</div><h2>Curious by nature. Detail-oriented by practice.</h2></div>
+        <div class="about-grid">
+          <div class="panel">
+            <p>I'm an aspiring QA professional who has completed software testing training and is developing practical skills through hands-on projects. I enjoy understanding how applications work, checking real user scenarios, and documenting issues clearly.</p>
+            <p>My current focus is strengthening manual testing fundamentals while building knowledge of Java, Selenium, and API testing with Postman.</p>
+          </div>
+          <div class="panel facts">
+            <div class="fact"><span>Role</span><strong>Aspiring QA Engineer</strong></div>
+            <div class="fact"><span>Training</span><strong>QSpiders</strong></div>
+            <div class="fact"><span>Focus</span><strong>Manual & Automation QA</strong></div>
+            <div class="fact"><span>Based in</span><strong>India</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">What I'm working with</div><h2>Skills & tools</h2><p>A growing toolkit for software quality and testing.</p></div>
+        <div class="panel skills">
+          <span class="chip">Manual Testing</span><span class="chip">Test Case Design</span><span class="chip">STLC</span>
+          <span class="chip">Defect Life Cycle</span><span class="chip">Severity & Priority</span><span class="chip">Regression Testing</span>
+          <span class="chip">Java Fundamentals</span><span class="chip">Selenium WebDriver</span><span class="chip">Postman</span>
+          <span class="chip">API Testing</span><span class="chip">Git & GitHub</span><span class="chip">Eclipse</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Selected work</div><h2>Projects</h2><p>Practical work demonstrating my testing approach.</p></div>
+        <div class="cards">
+          <article class="project">
+            <div class="tag">Manual testing</div>
+            <h3>E-commerce Website Manual Testing</h3>
+            <p>Created and executed test scenarios for login, cart, and checkout flows. Documented test cases and summarized execution results in a test execution report.</p>
+            <a href="https://github.com/preraksingh3/Ecommerce-Manual-Testing" target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a>
+          </article>
+          <article class="project">
+            <div class="tag">Automation practice</div>
+            <h3>Selenium WebDriver Practice</h3>
+            <p>Practicing browser automation with Java and Selenium, including locating web elements and automating a login workflow.</p>
+            <span style="color:var(--muted);font-size:.9rem">More project details coming soon</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Currently developing</div><h2>My learning journey</h2></div>
+        <div class="panel timeline">
+          <div class="timeline-item"><h3>Manual Software Testing</h3><p>Practicing test scenarios, test cases, execution, defect reporting, and testing concepts.</p></div>
+          <div class="timeline-item"><h3>Java Programming</h3><p>Strengthening core Java and object-oriented programming concepts.</p></div>
+          <div class="timeline-item"><h3>Automation & API Testing</h3><p>Building hands-on experience with Selenium WebDriver and Postman.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div><div class="eyebrow">Get in touch</div><h2 style="margin:5px 0">Let's connect.</h2><p>Have an opportunity, feedback, or a project to discuss? I'd be happy to connect.</p></div>
+          <a class="btn primary" href="https://github.com/preraksingh3" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">© <span id="year"></span> Prerak Singh. Built with HTML, CSS & JavaScript.</div></footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    menuButton.addEventListener("click", () => navLinks.classList.toggle("open"));
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navLinks.classList.remove("open")));
+  </script>
+</body>
+</html>
